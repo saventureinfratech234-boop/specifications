@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saventure : Interior Design, Architecture & Digital Marketing...</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="logo.png">
+
+
+<!-- Font Awesome -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+<body>
+
+<section class="legend-section">
+
+    <h2>Blessed By Land &amp; Legend</h2>
+
+    <div class="slider">
+
+        <button class="slide-btn prev" onclick="slideLeft()">&#10094;</button>
+
+        <div class="slide-track" id="slideTrack">
+
+            <!-- 1 -->
+            <div class="card">
+                <img src="images/manjunatha.jpg" onclick="openImage(this.src)" alt="">
+                <p><span>📍</span> Sri Manjunatha Swamy Temple - 10 km</p>
+            </div>
+
+            <!-- 2 -->
+            <div class="card">
+                <img src="images/netravathi.jpg" onclick="openImage(this.src)" alt="">
+                <p><span>📍</span> Netravathi Dam - 3 km</p>
+            </div>
+
+            <!-- 3 -->
+            <div class="card">
+                <img src="images/sringeri.jpg" onclick="openImage(this.src)" alt="">
+                <p><span>📍</span> Sringeri sharadamba - 11 km</p>
+            </div>
+
+            <!-- 4 -->
+            <div class="card">
+                <img src="images/kukke.jpg" onclick="openImage(this.src)" alt="">
+                <p><span>📍</span>Sri Kukke Subbramanya Swamy Temple - 13 km</p>
+            </div>
+
+            <!-- 5 -->
+            <div class="card">
+                <img src="images/ganesha.jpg" onclick="openImage(this.src)" alt="">
+                <p><span>📍</span>Sowthadka Maha Ganapathi - 16 km</p>
+            </div>
+
+            <!-- 6 -->
+            <div class="card">
+                <img src="images/rama.jpg" onclick="openImage(this.src)" alt="">
+                <p><span>📍</span> Sree Rama Kshetra - 11.9 km</p>
+            </div>
+
+            <!-- 7 -->
+            <div class="card">
+                <img src="images/Bylakuppe.jpg" onclick="openImage(this.src)" alt="">
+                <p><span>📍</span>Bylakuppe - 16 km</p>
+            </div>
+
+            <!-- 8 -->
+            <div class="card">
+                <img src="images/bisle.jpg" onclick="openImage(this.src)" alt="">
+                <p><span>📍</span>Bisle Ghat - 16 km</p>
+            </div>
+
+        </div>
+
+        <button class="slide-btn next" onclick="slideRight()">&#10095;</button>
+
+    </div>
+
+</section>
+
+
+
+<!-- Enquire Button -->
+<label for="enquiry-popup" class="enquire-btn">
+    ENQUIRE NOW
+</label>
+
+
+<!-- Hidden Checkbox -->
+<input type="checkbox" id="enquiry-popup">
+
+<!-- Background Overlay -->
+<div class="popup-overlay">
+
+    <!-- Popup Box -->
+    <div class="popup-box">
+
+        <!-- Close Button -->
+        <label for="enquiry-popup" class="close-btn">&times;</label>
+
+        <h2>Your Saventure Awaits!</h2>
+
+<form action="https://formsubmit.co/saventurebiz@gmail.com" method="POST">
+
+    <!-- Disable Captcha -->
+    <input type="hidden" name="_captcha" value="false">
+
+    <!-- Email Subject -->
+    <input type="hidden"
+           name="_subject"
+           value="New Website Enquiry - Sakleshpur Farm Resort">
+
+    <!-- Redirect to Thank You Page -->
+    <input type="hidden"
+           name="_next"
+           value="https://saventureinfratech234-boop.github.io/sakleshpur-specifications/thankyou.html">
+
+    <!-- Name -->
+    <input type="text"
+           name="Name"
+           placeholder="Name"
+           required>
+
+    <!-- Phone -->
+    <input type="tel"
+           name="Phone"
+           placeholder="Phone Number"
+           required>
+
+    <!-- Email -->
+    <input type="email"
+           name="Email"
+           placeholder="Email Address"
+           required>
+
+    <!-- Message -->
+    <textarea
+        name="message"
+        rows="6"
+        placeholder="Message"
+        required></textarea>
+
+    <!-- Checkbox -->
+    <div class="checkbox-area">
+
+        <input type="checkbox"
+               id="agree"
+               name="agree"
+               required>
+
+        <label for="agree">
+            I AUTHORISE SAVENTURE INFRA TECH LLP AND ITS REPRESENTATIVES
+            TO CONTACT ME THROUGH CALL, SMS, EMAIL OR WHATSAPP.
+        </label>
+
+    </div>
+
+    <!-- Submit -->
+    <button type="submit">SUBMIT</button>
+
+</form>
+
+    </div>
+
+</div>
+
+
+
+<!-- Lightbox -->
+
+<div id="popup">
+
+    <span onclick="closeImage()">&times;</span>
+
+    <img id="popupImg" alt="">
+
+</div>
+
+
+
+
+<script>
+
+const track = document.getElementById("slideTrack");
+const cards = document.querySelectorAll(".card");
+
+let currentIndex = 0;
+
+const slideWidth = 150; // Card width + gap
+
+// Number of cards visible at one time
+const visibleCards = 3;
+
+// Maximum position
+const maxIndex = cards.length - visibleCards;
+
+function slideRight() {
+
+    if (currentIndex < maxIndex) {
+        currentIndex++;
+    }
+
+    track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+}
+
+function slideLeft() {
+
+    if (currentIndex > 0) {
+        currentIndex--;
+    }
+
+    track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+}
+
+// Image Popup
+
+function openImage(src) {
+    document.getElementById("popup").style.display = "flex";
+    document.getElementById("popupImg").src = src;
+}
+
+function closeImage() {
+    document.getElementById("popup").style.display = "none";
+}
+
+</script>
+
+</body>
+</html>
